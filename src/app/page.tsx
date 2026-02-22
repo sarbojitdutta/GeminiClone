@@ -2,6 +2,7 @@
 import { useState } from "react"
 import MessageInput from "@/components/ui/MessageInput"
 import MessageWindow from "@/components/ui/MessageWindow"
+import SettingsModal from "@/SettingsModal"
 import { ChatHistory, ChatSettings, Message, MessageRole } from "@/types"
 
 export default function Home() {
@@ -64,12 +65,12 @@ export default function Home() {
         <div className="flex flex-col py-32">
             <MessageWindow history={history} />
 
-            {/* <SettingsModal
+            <SettingsModal
                 isOpen={isSettingsOpen}
                 onClose={handleCloseSettings}
                 onSave={handleSaveSettings}
                 currentSettings={settings}
-            /> */}
+            />
             <MessageInput onSend={handleSendMessage} onOpenSettings={handleOpenSettings} />
         </div>
     )
